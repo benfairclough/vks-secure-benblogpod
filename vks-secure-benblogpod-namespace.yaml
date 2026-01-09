@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: vks-benblogpod-ns1
+  name: vks-secure-benblogpod-ns
   labels:
-    name: vks-benblogpod-ns1
-    kubernetes.io/metadata.name: vks-benblogpod-ns1
+    name: vks-secure-benblogpod-ns
+    kubernetes.io/metadata.name: vks-secure-benblogpod-ns
