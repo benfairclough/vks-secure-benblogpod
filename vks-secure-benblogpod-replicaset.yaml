@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: benblog2
-  namespace: vks-benblogpod-ns1
+  name: securebenblog
+  namespace: vks-secure-benblogpod-ns
 spec:
   replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: benblog2
+      app: securebenblog
   template:
     metadata:
       labels:
-        app: benblog2
+        app: securebenblog
     spec:
       containers:
         - image: harbor.home.ads:443/library/upbblog:v2
-          name: benblog2
+          name: securebenblog
           ports:
             - containerPort: 80
           securityContext:
