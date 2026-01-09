@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: benblog2
+  namespace: vks-benblogpod-ns1
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: benblog2
+  template:
+    metadata:
+      labels:
+        app: benblog2
+    spec:
+      containers:
+        - image: harbor.home.ads:443/library/upbblog:v2
+          name: benblog2
+          ports:
+            - containerPort: 80
+          securityContext:
+            runAsUser: 1111
+            privileged: false
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            seccompProfile:
+              type: RuntimeDefault
