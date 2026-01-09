@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: benblog-ui2
-  namespace: vks-benblogpod-ns1
+  name: securebenblog-ui
+  namespace: vks-secure-benblogpod-ns
 spec:
   ports:
   - port: 80
     targetPort: 80
   selector:
-    app: benblog2
+    app: securebenblog
   type: LoadBalancer
